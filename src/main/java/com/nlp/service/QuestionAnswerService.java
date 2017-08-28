@@ -19,7 +19,7 @@ public class QuestionAnswerService implements QuestionAnswerInterface {
 		QuestionAnswerHandler handler = new QuestionAnswerHandler();
 	
 		// find interesting sentence for the provided answers
-		Map<String, String> interestMap = handler.matchSentenceWithAnswers(request.getParagraph(),
+		Map<String, String> interestMap = handler.matchInterestingSentenceWithAnswers(request.getParagraph(),
 				request.getProvidedAnswers());
 
 		return handler.findAnswersForQuestions(interestMap, request.getQuestions());

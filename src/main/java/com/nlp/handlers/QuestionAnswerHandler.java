@@ -24,7 +24,7 @@ public class QuestionAnswerHandler {
 	 * @param providedAnswers
 	 * @return
 	 */
-	public Map<String, String> matchSentenceWithAnswers(String paragraph, List<String> providedAnswers) {
+	public Map<String, String> matchInterestingSentenceWithAnswers(String paragraph, List<String> providedAnswers) {
 
 		Map<String, String> map = new LinkedHashMap<String, String>();
 		for (String answer : providedAnswers) {
