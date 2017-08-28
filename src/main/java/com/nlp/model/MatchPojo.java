@@ -1,7 +1,9 @@
 package com.nlp.model;
 
 /**
- *  To hold a potential match
+ * pojo class carries match information
+ * @author ramans
+ *
  */
 public class MatchPojo {
     @Override

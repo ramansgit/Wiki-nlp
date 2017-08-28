@@ -5,19 +5,19 @@ import java.util.Map;
 import com.nlp.handlers.QuestionAnswerHandler;
 import com.nlp.model.QAPojo;
 
+/**
+ * gets answers for the questions
+ * @author ramans
+ *
+ */
 public class QuestionAnswerService implements QuestionAnswerInterface {
-
-	/**
-	 * returns answers
-	 * 
-	 * @throws Exception
-	 */
+/**
+ * gets answer for the given questions from the paragraph
+ */
 	public Map<String,String> findAnswers(QAPojo request) throws Exception {
 
 		QuestionAnswerHandler handler = new QuestionAnswerHandler();
-		// validation phase
-		handler.validationPhase(request);
-
+	
 		// find interesting sentence for the provided answers
 		Map<String, String> interestMap = handler.matchSentenceWithAnswers(request.getParagraph(),
 				request.getProvidedAnswers());

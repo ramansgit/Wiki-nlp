@@ -12,9 +12,15 @@ import com.nlp.model.QAPojo;
 import com.nlp.service.QuestionAnswerInterface;
 import com.nlp.service.QuestionAnswerService;
 
+/**
+ * testing the qa utitlity.
+ * @author ramans
+ *
+ */
 public class App {
 
 	/**
+	 * method to test the qa program
 	 * 
 	 * @param args
 	 * @throws Exception
@@ -23,18 +29,22 @@ public class App {
 
 		QAPojo request = getInputFromFile();
 
-		System.out.println(request);
-
 		QuestionAnswerInterface qaInterface = new QuestionAnswerService();
 
 		Map<String, String> qa = qaInterface.findAnswers(request);
 
 		for (String question : qa.keySet()) {
-			System.out.println(question + "->" + qa.get(question));
+			System.out.println(qa.get(question));
 		}
 
 	}
 
+	/**
+	 * reads input data from zebra.txt
+	 * 
+	 * @return
+	 * @throws IOException
+	 */
 	public static QAPojo getInputFromFile() throws IOException {
 		BufferedReader br = new BufferedReader(new FileReader("zebra.txt"));
 		QAPojo pojo = new QAPojo();
